@@ -1,0 +1,53 @@
+'check depression value
+'input: depression value
+Public Sub CheckDepression(ByVal value As Integer)
+    If value >= 50 Then
+        Dim choice As Integer
+        choice = MsgBox("Your Score is: ", vbOKOnly, "GAME OVER")
+        GetUserChoice (choice)
+
+    Else
+        'check blocks elimination
+        'Module1.CheckCells()
+        
+    End If
+End Sub
+
+'input: user's choice
+'ok -- 1, yes -- 6, no -- 7
+Public Sub GetUserChoice(ByVal choice As Integer)
+    If choice = 1 Then
+        choice = MsgBox("Sorry, you are too depressed. Do you want to play again? ", 4, "GAME OVER")
+        Call GetUserChoice(choice)
+    If choice = 6 Then
+        ' start a newGame
+        Call GameInitialization
+    Else
+        'quit game
+    End If
+End Sub
+
+'
+Public Sub GameInitialization()
+    RandColor
+    'timer
+    
+    
+End Sub
+
+Public Sub RandColor()
+    Dim targetRange, cell As Range
+    Dim cellColor As Byte
+    targetRange = Range("B2:J10")
+    For Each cell In targetRange
+        cellColor = Application.WorksheetFunction.RandBetween(0, 2) 'Rand a number
+        If cellColor = 0 Then
+            cell.Interior.color = VBA.RGB(255, 0, 0) 'Red
+        ElseIf cellColor = 1 Then
+            cell.Interior.color = VBA.RGB(0, 0, 255) 'Blue
+        Else
+            cell.Interior.color = VBA.RGB(255, 255, 0) 'Yellow
+        End If
+    Next
+End Sub
+
