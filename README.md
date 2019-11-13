@@ -4,5 +4,5 @@
 
 ## How to Play
 
-​	![Tutorial](C:\Users\lht13\Desktop\Game 200 Game Design System\SpreadSheetGame\img\Tutorial.png)
+​	![Tutorial](img\Tutorial.png)
 
