@@ -4,5 +4,5 @@
 
 ## How to Play
 
-​	![Tutorial](img\Tutorial.png)
+​	![Tutorial](img/Tutorial.png)
 
